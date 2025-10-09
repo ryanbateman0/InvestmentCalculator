@@ -15,12 +15,12 @@ export default function ResultTable({ resultTableValues }) {
             <tbody>
             {
                 resultTableValues.map((row, rowNumber) => (
-                    <tr>
+                    <tr key={rowNumber}>
                         <td>{rowNumber + 1}</td>
-                        <td>{formatter.format(row['annualInvestment'])}</td>
-                        <td>{formatter.format(row['interest'])}</td>
                         <td>{formatter.format(row['valueEndOfYear'])}</td>
-                        <td>{formatter.format(row['annualInvestment'] * (rowNumber + 1))}</td>
+                        <td>{formatter.format(row['interest'])}</td>
+                        <td>{formatter.format(row['totalInterest'])}</td>
+                        <td>{formatter.format(row['totalCapital'])}</td>
                     </tr>
                 ))
             }
